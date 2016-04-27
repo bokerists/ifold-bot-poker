@@ -22,8 +22,9 @@ exports = module.exports = {
     'use strict';
 
     console.log(`Currently playing tournament ${gamestate.tournamentId}`);
+    var big_blind = 2*gamestate.sb;
 
-    return 0;
+    return 3*big_blind;
 
   }
 
