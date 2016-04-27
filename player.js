@@ -24,7 +24,28 @@ exports = module.exports = {
     console.log(`Currently playing tournament ${gamestate.tournamentId}`);
     var big_blind = 2*gamestate.sb;
 
-    return 3*big_blind;
+    var our_bet = 3*big_blind;
+    // 
+    // Se fanno call al nostro bet (no rilancio)
+    // puntiamo i 3/4 del pot
+    //Se rilanciano controrilancio all in
+    //
+    var doesSomeoneBet = function(players) {
+      return players.some(function(x){
+        return x.chipsBet >= our_bet;
+      })
+    };
+
+    var siamoInFlop = function() {
+      return gamestate.commonCards.length >= 3;
+    }
+
+
+    if (doesSomeoneBet() && siamoInFlop())
+    return (3*the_pot)/4;    
+
+
+    return our_bet;
 
   }
 
