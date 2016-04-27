@@ -55,8 +55,8 @@ exports = module.exports = {
       return our_bet < gamestate.callAmount;
     }
 
-    if (siamoInPreFlop() && hannoPuntatoPiuDiNoi())
-      return our_chips;
+   /* if (siamoInPreFlop() && hannoPuntatoPiuDiNoi())
+      return our_chips;*/
 
 
     if (doesSomeoneBet() && siamoInFlop())
