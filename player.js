@@ -1,4 +1,5 @@
 
+var previous_bet = null;
 exports = module.exports = {
 
   VERSION: 'Superstar poker js-player',
@@ -42,9 +43,10 @@ exports = module.exports = {
 
 
     if (doesSomeoneBet() && siamoInFlop())
-    return (3*the_pot)/4;    
+    return (2*the_pot)/4;    
 
 
+    previous_bet = our_bet;
     return our_bet;
 
   }
