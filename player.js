@@ -59,12 +59,16 @@ exports = module.exports = {
       return our_chips;*/
 
 
-    if (doesSomeoneBet() && siamoInFlop())
+    if (doesSomeoneBet(gamestate.players) && siamoInFlop()){
+      console.log("hanno bettato e siamo in flop")
       return (2*the_pot)/4;    
+    }
 
 
     previous_bet = our_bet;
     return our_bet;
+
+
 
   }
 
